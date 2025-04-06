@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Login - FitZone Fitness Center</title>
+    <style>
+      .login_container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      .login_form {
+        display: flex;
+        flex-direction: column;
+      }
+      .form_group {
+        margin-bottom: 15px;
+      }
+      .form_group label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+      }
+      .form_group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .btn_primary {
+        background: #ff6600;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .btn_primary:hover {
+        background: #e65c00;
+      }
+      .register_link {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .register_link a {
+        color: #ff6600;
+        text-decoration: none;
+      }
+      .register_link a:hover {
+        text-decoration: underline;
+      }
+
+      .footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      .footer_bar {
+        text-align: center;
+        padding: 10px;
+        background: #222;
+        color: #fff;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav_bar">
+        <div class="nav_header">
+          <div class="nav_logo">
+            <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section_container login_container">
+      <h2 class="section_header">LOGIN</h2>
+      <p class="section_description">Access your FitZone Fitness account.</p>
+      <form action="login.php" method="POST" onsubmit="return loginsuccess()" class="login_form">
+        <div class="form_group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form_group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="btn btn_primary">Login</button>
+      </form>
+      <div class="register_link">
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+      </div>
+    </section>
+
+    <!--<form action="login.php" method="post">
+      <input type="submit" value="Back to Home" />
+    </form>-->
+
+    <footer class="footer">
+      <div class="footer_bar">
+        Copyright © 2025 FitZone Fitness Center. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
