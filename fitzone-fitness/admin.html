@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Admin Dashboard - FitZone Fitness Center</title>
+    <style>
+      .admin_container {
+        display: flex;
+      }
+      .sidebar {
+        width: 250px;
+        background: #222;
+        color: white;
+        height: 100vh;
+        padding: 20px;
+      }
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar ul li {
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .sidebar ul li:hover {
+        background: #ff6600;
+      }
+      .content {
+        flex: 1;
+        padding: 20px;
+      }
+      .dashboard_section {
+        display: none;
+      }
+      .dashboard_section.active {
+        display: block;
+      }
+      form {
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin: 10px 0 5px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        background: #ff6600;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      button:hover {
+        background: #e05500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin_container">
+      <nav class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+          <li onclick="showSection('classes')">Manage Classes</li>
+          <li onclick="showSection('trainers')">Manage Trainers</li>
+          <li onclick="showSection('memberships')">Manage Memberships</li>
+          <li onclick="showSection('offers')">Manage Offers</li>
+          <li onclick="showSection('users')">User Management</li>
+        </ul>
+      </nav>
+      <div class="content">
+        <div id="classes" class="dashboard_section active">
+          <h2>Manage Classes</h2>
+          <form>
+            <label for="class_name">Class Name:</label>
+            <input type="text" id="class_name" />
+            <label for="class_schedule">Schedule:</label>
+            <input type="text" id="class_schedule" />
+            <button type="submit">Add Class</button>
+          </form>
+        </div>
+        <div id="trainers" class="dashboard_section">
+          <h2>Manage Trainers</h2>
+          <form>
+            <label for="trainer_name">Trainer Name:</label>
+            <input type="text" id="trainer_name" />
+            <label for="trainer_experience">Experience:</label>
+            <input type="text" id="trainer_experience" />
+            <button type="submit">Add Trainer</button>
+          </form>
+        </div>
+        <div id="memberships" class="dashboard_section">
+          <h2>Manage Memberships</h2>
+          <form>
+            <label for="membership_type">Membership Type:</label>
+            <input type="text" id="membership_type" />
+            <label for="membership_price">Price:</label>
+            <input type="text" id="membership_price" />
+            <button type="submit">Add Membership</button>
+          </form>
+        </div>
+        <div id="offers" class="dashboard_section">
+          <h2>Manage Offers</h2>
+          <form>
+            <label for="offer_name">Offer Name:</label>
+            <input type="text" id="offer_name" />
+            <label for="offer_discount">Discount:</label>
+            <input type="text" id="offer_discount" />
+            <button type="submit">Add Offer</button>
+          </form>
+        </div>
+        <div id="users" class="dashboard_section">
+          <h2>User Management</h2>
+          <form>
+            <label for="user_name">User Name:</label>
+            <input type="text" id="user_name" />
+            <label for="user_role">Role:</label>
+            <input type="text" id="user_role" />
+            <button type="submit">Add User</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      function showSection(sectionId) {
+        document.querySelectorAll('.dashboard_section').forEach((section) => {
+          section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+      }
+    </script>
+  </body>
+</html>
